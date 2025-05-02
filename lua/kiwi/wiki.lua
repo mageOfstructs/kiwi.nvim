@@ -49,6 +49,7 @@ M.create_or_open_wiki_file = function()
 	vim.api.nvim_set_current_line(newline)
 	local buffer_number = vim.fn.bufnr(vim.fs.joinpath(config.path, filename), true)
 	vim.api.nvim_win_set_buf(0, buffer_number)
+	vim.api.nvim_buf_set_lines(buffer_number, 0, 0, false, { "# " .. name })
 	local opts = { noremap = true, silent = true, nowait = true }
 	vim.api.nvim_buf_set_keymap(
 		buffer_number,
