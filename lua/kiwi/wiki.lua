@@ -31,7 +31,7 @@ M.open_wiki_index = function(name)
 	)
 	vim.api.nvim_buf_set_keymap(buffer_number, "n", "<CR>", ':lua require("kiwi").open_link()<CR>', opts)
 	vim.api.nvim_buf_set_keymap(buffer_number, "n", "<Tab>", ':let @/="\\\\[.\\\\{-}\\\\]"<CR>nl', opts)
-	vim.api.nvim_buf_set_keymap(buffer_number, "n", "<S-Tab>", ':let @/="\\\\[.\\\\{-}\\\\]"<CR>Nl', opts)
+	vim.api.nvim_buf_set_keymap(buffer_number, "n", "<S-Tab>", ':let @/="\\\\[.\\\\{-}\\\\]"<CR>N', opts)
 end
 
 -- Create a new Wiki entry in Journal folder on highlighting word and pressing <CR>
@@ -59,7 +59,7 @@ M.create_or_open_wiki_file = function()
 	)
 	vim.api.nvim_buf_set_keymap(buffer_number, "n", "<CR>", ':lua require("kiwi").open_link()<CR>', opts)
 	vim.api.nvim_buf_set_keymap(buffer_number, "n", "<Tab>", ':let @/="\\\\[.\\\\{-}\\\\]"<CR>nl', opts)
-	vim.api.nvim_buf_set_keymap(buffer_number, "n", "<S-Tab>", ':let @/="\\\\[.\\\\{-}\\\\]"<CR>Nl', opts)
+	vim.api.nvim_buf_set_keymap(buffer_number, "n", "<S-Tab>", ':let @/="\\\\[.\\\\{-}\\\\]"<CR>N', opts)
 end
 
 -- Open a link under the cursor
@@ -82,7 +82,7 @@ M.open_link = function()
 			)
 			vim.api.nvim_buf_set_keymap(buffer_number, "n", "<CR>", ':lua require("kiwi").open_link()<CR>', opts)
 			vim.api.nvim_buf_set_keymap(buffer_number, "n", "<Tab>", ':let @/="\\\\[.\\\\{-}\\\\]"<CR>nl', opts)
-			vim.api.nvim_buf_set_keymap(buffer_number, "n", "<S-Tab>", ':let @/="\\\\[.\\\\{-}\\\\]"<CR>Nl', opts)
+			vim.api.nvim_buf_set_keymap(buffer_number, "n", "<S-Tab>", ':let @/="\\\\[.\\\\{-}\\\\]"<CR>N', opts)
 		end
 	else
 		vim.print("E: Cannot find file")
